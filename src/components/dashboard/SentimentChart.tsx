@@ -63,9 +63,12 @@ const SentimentChart: React.FC<SentimentChartProps> = ({ sentimentData, workstre
                 }}
               />
               <Tooltip 
-                formatter={(value) => [`${Number(value).toFixed(2)} (${
-                  value < -0.3 ? 'Negative' : value > 0.3 ? 'Positive' : 'Neutral'
-                })`, 'Sentiment']}
+                formatter={(value: number) => [
+                  `${Number(value).toFixed(2)} (${
+                    value < -0.3 ? 'Negative' : value > 0.3 ? 'Positive' : 'Neutral'
+                  })`, 
+                  'Sentiment'
+                ]}
               />
               <defs>
                 <linearGradient id="splitColor" x1="0" y1="0" x2="0" y2="1">
