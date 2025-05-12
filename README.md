@@ -1,73 +1,91 @@
-# Welcome to your Lovable project
 
-## Project info
+# UBS Project Management Portal
 
-**URL**: https://lovable.dev/projects/62854d34-4189-4a05-97f7-b4872f8c5c9d
+A web application for project management data visualization with AI assistant capabilities.
 
-## How can I edit this code?
+## Features
 
-There are several ways of editing your application.
+- Dashboard with workstream status overview
+- RAG (Red/Amber/Green) status monitoring
+- Interactive dependency visualization
+- AI-powered chat interface for data queries
+- Integration with SharePoint and GitLab
+- Sentiment analysis for workstream performance
+- Automated bi-weekly data snapshots
 
-**Use Lovable**
+## Tech Stack
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/62854d34-4189-4a05-97f7-b4872f8c5c9d) and start prompting.
+### Frontend
+- React with TypeScript
+- TailwindCSS for styling (following UBS design guidelines)
+- Recharts for data visualization
+- React Query for state management
 
-Changes made via Lovable will be committed automatically to this repo.
+### Backend
+- FastAPI (Python)
+- Azure OpenAI API integration for AI assistant
+- Schedule for automated tasks
 
-**Use your preferred IDE**
+## Getting Started
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+### Prerequisites
+- Node.js (v16+)
+- Python (3.9+)
+- Docker and Docker Compose (optional for containerized deployment)
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+### Development Setup
 
-Follow these steps:
+1. Clone the repository
+2. Install frontend dependencies:
+   ```
+   npm install
+   ```
+3. Install backend dependencies:
+   ```
+   cd backend
+   pip install -r requirements.txt
+   ```
+4. Create a `.env` file from `.env.example` and add your Azure OpenAI credentials
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+5. Start the backend:
+   ```
+   cd backend
+   uvicorn main:app --host 0.0.0.0 --port 8000 --reload
+   ```
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+6. In a separate terminal, start the frontend:
+   ```
+   npm run dev
+   ```
 
-# Step 3: Install the necessary dependencies.
-npm i
+7. Visit `http://localhost:5173` (or the port indicated by Vite)
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+### Using Docker Compose
+
+1. Create a `.env` file with your Azure OpenAI credentials
+2. Run:
+   ```
+   docker-compose up
+   ```
+3. Visit `http://localhost:8000`
+
+## Azure OpenAI Integration
+
+This application uses the Azure OpenAI service for the AI assistant capabilities. You'll need:
+
+1. An Azure subscription
+2. An Azure OpenAI resource
+3. A model deployment (GPT-4 recommended)
+4. The API key and endpoint
+
+Add these credentials to your `.env` file:
+
+```
+AZURE_OPENAI_ENDPOINT=https://your-resource-name.openai.azure.com/
+AZURE_OPENAI_KEY=your-azure-openai-key
+AZURE_OPENAI_DEPLOYMENT=your-deployment-name
 ```
 
-**Edit a file directly in GitHub**
+## Data Snapshots
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/62854d34-4189-4a05-97f7-b4872f8c5c9d) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+Data snapshots are automatically created every two weeks and stored in the `snapshots` directory. You can also manually trigger a snapshot via the API.
