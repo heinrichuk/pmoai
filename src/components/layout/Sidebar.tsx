@@ -41,17 +41,21 @@ const Sidebar: React.FC<SidebarProps> = ({ collapsed, toggleSidebar }) => {
       <div className="flex items-center h-16 px-4 border-b border-ubs-gray-100">
         {!collapsed && (
           <div className="flex items-center">
-            <div className="h-8 w-8 bg-ubs-red rounded flex items-center justify-center">
-              <span className="text-white font-bold">UBS</span>
-            </div>
+            <img 
+              src="/lovable-uploads/8bb1017d-4af6-49d8-b05a-c9d2e3406810.png" 
+              alt="UBS Logo" 
+              className="h-8" 
+            />
             <span className="ml-2 font-semibold text-ubs-gray-700">GIC</span>
           </div>
         )}
         {collapsed && (
           <div className="flex items-center justify-center w-full">
-            <div className="h-8 w-8 bg-ubs-red rounded flex items-center justify-center">
-              <span className="text-white font-bold">UBS</span>
-            </div>
+            <img 
+              src="/lovable-uploads/8bb1017d-4af6-49d8-b05a-c9d2e3406810.png" 
+              alt="UBS Logo" 
+              className="h-8" 
+            />
           </div>
         )}
       </div>
