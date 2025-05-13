@@ -46,7 +46,7 @@ const Sidebar: React.FC<SidebarProps> = ({ collapsed, toggleSidebar }) => {
               alt="UBS Logo" 
               className="h-8" 
             />
-            <span className="ml-2 font-semibold text-ubs-gray-700">GIC</span>
+            <span className="ml-2 font-semibold text-ubs-gray-700">GIC PMO AI</span>
           </div>
         )}
         {collapsed && (
