@@ -36,6 +36,7 @@ const Sidebar: React.FC<SidebarProps> = ({ collapsed, toggleSidebar }) => {
         'h-screen bg-white border-r border-ubs-gray-100 transition-all duration-300 flex flex-col',
         collapsed ? 'w-16' : 'w-64'
       )}
+      style={{ marginRight: 0 }}
     >
       <div className="flex items-center h-16 px-4 border-b border-ubs-gray-100">
         {!collapsed && (

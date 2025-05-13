@@ -22,7 +22,7 @@ const MainLayout: React.FC<MainLayoutProps> = ({ children, title, subtitle }) =>
       <Sidebar collapsed={sidebarCollapsed} toggleSidebar={toggleSidebar} />
       <div className={cn(
         'flex flex-col flex-1 overflow-hidden transition-all duration-300',
-        sidebarCollapsed ? 'ml-16' : 'ml-64'
+        sidebarCollapsed ? 'ml-0' : 'ml-0'
       )}>
         <Header title={title} subtitle={subtitle} />
         <main className="flex-1 overflow-auto p-6">
