@@ -18,7 +18,7 @@ const MainLayout: React.FC<MainLayoutProps> = ({ children, title, subtitle }) =>
   };
 
   return (
-    <div className="flex h-screen bg-ubs-gray-100">
+    <div className="flex h-screen">
       <Sidebar collapsed={sidebarCollapsed} toggleSidebar={toggleSidebar} />
       <div className={cn(
         'flex flex-col flex-1 overflow-hidden transition-all duration-300',
